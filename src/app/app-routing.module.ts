@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChildAComponent } from './child/child-a/child-a.component';
 import { ChildBComponent } from './child/child-b/child-b.component';
 import { FirstComponent } from './first/first.component';
+import { HttpComponent } from './http/http.component';
 import { SecondComponent } from './second/second.component';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'second-component',
     component: SecondComponent,
+  },
+  {
+    path: 'http-client',
+    component: HttpComponent,
   },
 ];
 

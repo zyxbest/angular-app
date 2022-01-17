@@ -1,0 +1,11 @@
+<button (click)="showConfig()">get config</button>
+{{ config }}
+
+<div>
+  <p style="display: block">点击下方列表可以删除</p>
+  <button (click)="add()">add user</button>
+  <button (click)="clear()">clear</button>
+  <li *ngFor="let user of users">
+    <a (click)="delete(user.id)">id: {{ user.id }} name: {{ user.name }}</a>
+  </li>
+</div>
