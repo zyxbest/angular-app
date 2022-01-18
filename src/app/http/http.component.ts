@@ -1,8 +1,7 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { delay } from 'rxjs';
-import { Config } from '../config/config';
-import { ConfigService } from '../config/config.service';
-import { Person } from '../config/person';
+import { Component, OnInit } from '@angular/core';
+import { Config } from 'app/config/config';
+import { ConfigService } from 'app/config/config.service';
+import { Person } from 'app/config/person';
 
 @Component({
   selector: 'app-http',
