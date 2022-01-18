@@ -9,6 +9,10 @@ import { ChildAComponent } from './child/child-a/child-a.component';
 import { ChildBComponent } from './child/child-b/child-b.component';
 import { HttpComponent } from './http/http.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,15 +21,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SecondComponent,
     ChildAComponent,
     ChildBComponent,
-    HttpComponent
+    HttpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -2,9 +2,9 @@
 {{ config }}
 
 <div>
-  <p style="display: block">点击下方列表可以删除</p>
-  <button (click)="add()">add user</button>
-  <button (click)="clear()">clear</button>
+  <p  style="display: block" class="mat-h1">点击下方列表可以删除</p>
+  <button mat-flat-button color="primary" (click)="add()">add user</button>
+  <button mat-flat-button color="primary" (click)="clear()">clear</button>
   <li *ngFor="let user of users">
     <a (click)="delete(user.id)">id: {{ user.id }} name: {{ user.name }}</a>
   </li>
