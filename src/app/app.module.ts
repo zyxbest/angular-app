@@ -8,6 +8,7 @@ import { SecondComponent } from './second/second.component';
 import { ChildAComponent } from './child/child-a/child-a.component';
 import { ChildBComponent } from './child/child-b/child-b.component';
 import { HttpComponent } from './http/http.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpComponent } from './http/http.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
