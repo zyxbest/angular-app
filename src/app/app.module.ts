@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
@@ -44,6 +44,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { JwtInterceptor } from './auth/jwt.interceptor';
+import { ErrorInterceptor } from './auth/error.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,8 +72,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
+    MatInputModule,
   ],
-  providers: [],
+  providers: [
+    { useClass: JwtInterceptor, provide: HTTP_INTERCEPTORS, multi: true },
+    { useClass: ErrorInterceptor, provide: HTTP_INTERCEPTORS, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

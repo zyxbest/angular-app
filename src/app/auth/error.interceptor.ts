@@ -19,7 +19,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         // 401,403自动退出登录
-        if ([401, 403].includes(err.status) && this.authService.user) {
+        if ([401, 403].includes(err.status) && this.authService.userObservable) {
           this.authService.logout();
         }
         const error = err.error?.message || err.statusText;

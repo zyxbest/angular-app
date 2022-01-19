@@ -23,8 +23,10 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     const user = this.authService.user;
+    const isLoggedIn = user?.tokenValue;
+
     // 验证成功
-    if (user) {
+    if (isLoggedIn) {
       return true;
     }
 

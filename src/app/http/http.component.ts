@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/auth/auth.service';
 import { Config } from 'app/config/config';
 import { ConfigService } from 'app/config/config.service';
 import { Person } from 'app/config/person';
@@ -11,12 +12,18 @@ import { Person } from 'app/config/person';
 export class HttpComponent implements OnInit {
   config = '';
   users: Person[] = [];
-  constructor(private configService: ConfigService) {}
+  constructor(
+    private configService: ConfigService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getAll();
   }
 
+  logout() {
+    this.authService.logout();
+  }
   getAll() {
     this.configService.getUsers().subscribe((data) => {
       this.users = data;
