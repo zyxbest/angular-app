@@ -12,9 +12,12 @@
         <input matInput placeholder="Password" />
       </mat-form-field>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions style="display: flex; justify-content: space-between">
       <button mat-stroked-button color="accent" (click)="login()">
         Login in
+      </button>
+      <button mat-stroked-button color="accent" (click)="register()">
+        No Account? Register
       </button>
     </mat-card-actions>
   </mat-card>

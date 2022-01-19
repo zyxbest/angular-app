@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: () => {
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/homepage';
+          const returnUrl =
+            this.route.snapshot.queryParams['returnUrl'] || '/homepage';
           this.router.navigateByUrl(returnUrl);
         },
         error: (error) => {
@@ -31,4 +32,5 @@ export class LoginComponent implements OnInit {
         },
       });
   }
+  register() {}
 }
