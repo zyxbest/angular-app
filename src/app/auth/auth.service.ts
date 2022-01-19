@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import datasource from 'assets/datasource';
+import { Path } from 'assets/path';
 import { environment } from 'environments/environment';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 @Injectable({
@@ -42,6 +43,6 @@ export class AuthService {
     localStorage.removeItem('user');
     this.userSubject.next(null);
     this.http.get(this.apiUrl + '/logout').subscribe();
-    this.router.navigate(['/login']);
+    this.router.navigate([Path.LOGIN_ROUTE]);
   }
 }

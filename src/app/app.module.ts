@@ -46,6 +46,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { JwtInterceptor } from './auth/jwt.interceptor';
 import { ErrorInterceptor } from './auth/error.interceptor';
+import { UnauthComponent } from './templates/unauth/unauth.component';
+import { HomepageComponent } from './templates/homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +59,8 @@ import { ErrorInterceptor } from './auth/error.interceptor';
     LoginComponent,
     RegisterComponent,
     RouteTestComponent,
+    UnauthComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

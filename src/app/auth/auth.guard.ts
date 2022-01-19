@@ -6,6 +6,7 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
+import { Path } from 'assets/path';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
@@ -31,7 +32,9 @@ export class AuthGuard implements CanActivate {
     }
 
     // 未登录
-    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+    this.router.navigate([Path.LOGIN_ROUTE], {
+      queryParams: { returnUrl: state.url },
+    });
     return false;
   }
 }
