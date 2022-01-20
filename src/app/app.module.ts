@@ -77,6 +77,7 @@ import { HomepageComponent } from './templates/homepage/homepage.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
   ],
   providers: [
     { useClass: JwtInterceptor, provide: HTTP_INTERCEPTORS, multi: true },
