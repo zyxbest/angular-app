@@ -48,6 +48,8 @@ import { JwtInterceptor } from './auth/jwt.interceptor';
 import { ErrorInterceptor } from './auth/error.interceptor';
 import { UnauthComponent } from './templates/unauth/unauth.component';
 import { HomepageComponent } from './templates/homepage/homepage.component';
+import { TimeElapsingComponent } from './templates/time-elapsing/time-elapsing.component';
+import { SpanPipe } from './pipes/span.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,8 @@ import { HomepageComponent } from './templates/homepage/homepage.component';
     RouteTestComponent,
     UnauthComponent,
     HomepageComponent,
+    TimeElapsingComponent,
+    SpanPipe,
   ],
   imports: [
     BrowserModule,

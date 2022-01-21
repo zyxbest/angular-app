@@ -1,0 +1,14 @@
+input {
+  /* border-bottom-style: solid; */
+  /* border-bottom-color: blueviolet; */
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  /* display: flex; */
+}
+
+.colum {
+  width: 160px;
+}

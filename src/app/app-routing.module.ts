@@ -10,6 +10,7 @@ import { SecondComponent } from './second/second.component';
 import { HomepageComponent } from './templates/homepage/homepage.component';
 import { LoginComponent } from './templates/login/login.component';
 import { RegisterComponent } from './templates/register/register.component';
+import { TimeElapsingComponent } from './templates/time-elapsing/time-elapsing.component';
 import { UnauthComponent } from './templates/unauth/unauth.component';
 
 const routes: Routes = [
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path: 'homepage',
     component: HomepageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'time-elapsing',
+    component: TimeElapsingComponent,
     canActivate: [AuthGuard],
   },
   {

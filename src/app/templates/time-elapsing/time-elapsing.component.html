@@ -1,0 +1,29 @@
+<p>time-elapsing works!</p>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <mat-form-field appearance="fill" gdColumns="1">
+    <input
+      #input
+      matInput
+      formControlName="content"
+      color="primary"
+      placeholder="label"
+    />
+  </mat-form-field>
+</form>
+<table mat-table #table [dataSource]="timespans">
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef class="colum">date</th>
+    <td mat-cell *matCellDef="let row">{{ row.date | date: 'HH:mm:ss' }}</td>
+  </ng-container>
+  <ng-container matColumnDef="span">
+    <th mat-header-cell *matHeaderCellDef class="colum">span</th>
+    <td mat-cell *matCellDef="let row">{{ row.span | span }}</td>
+  </ng-container>
+  <ng-container matColumnDef="content">
+    <th mat-header-cell *matHeaderCellDef>content</th>
+    <td mat-cell *matCellDef="let row">{{ row.content }}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['date', 'span', 'content']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['date', 'span', 'content']"></tr>
+</table>
