@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import * as dayjs from 'dayjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { environment } from 'environments/environment';
 import * as moment from 'moment';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-time-elapsing',
@@ -17,8 +17,15 @@ export class TimeElapsingComponent implements OnInit {
   });
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {}
 
+  @ViewChild('input') input: any;
   ngOnInit(): void {
     this.getAll();
+    fromEvent(window, 'keyup').subscribe((event: any) => {
+      if (event.key === '/') {
+        console.log(event.key);
+        this.input.nativeElement.click();
+      }
+    });
   }
 
   onSubmit() {
