@@ -20,7 +20,11 @@
   </ng-container>
   <ng-container matColumnDef="content">
     <th mat-header-cell *matHeaderCellDef>content</th>
-    <td mat-cell *matCellDef="let row">{{ row.content }}</td>
+    <td mat-cell *matCellDef="let row">
+      <!-- <mat-form-field appearance="fill" style="width: 100%"> -->
+        <input matInput value="{{ row.content }}" style="border-bottom: solid ;border-color: black;" (keyup.enter)="enter()"/>
+      <!-- </mat-form-field> -->
+    </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="['date', 'span', 'content']"></tr>
   <tr mat-row *matRowDef="let row; columns: ['date', 'span', 'content']"></tr>

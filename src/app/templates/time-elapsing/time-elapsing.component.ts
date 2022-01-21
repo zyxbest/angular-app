@@ -59,4 +59,8 @@ export class TimeElapsingComponent implements OnInit {
         this.timespans = value.reverse();
       });
   }
+
+  enter() {
+    alert('hello');
+  }
 }
